@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabs__container">
+            <div class="tabs">
+                <div class="tab active" data-tab="0">
+                    <p>T1</p>
+                </div>
+                <div class="tab" data-tab="1">
+                    <p>T2</p>
+                </div>
+                <div class="tab" data-tab="2">
+                    <p>T3</p>
+                </div>
+            </div>
+            <div class="pointer"></div>
+            <div class="content__container">
+                <div class="content" data-content="0">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus iure beatae iusto rem facilis illo sit harum laboriosam quas veniam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelector(".tabs");
+        const pointer = document.querySelector(".pointer");
+        const tab = document.querySelectorAll(".tab");
+
+        tab.forEach(e => {
+            e.addEventListener("click", (_) => {
+                tab.forEach(e => {
+                    e.classList.remove("active");
+                });
+
+                if(_.target.classList.contains("tab")) {
+                    let currentTab = _.target.getAttribute("data-tab");
+                    pointer.style.transform = `translateX(${58 * currentTab}px)`;
+                    _.target.classList.add("active");
+                } else {
+                    let currentTab = _.target.parentElement.getAttribute("data-tab");
+                    pointer.style.transform = `translateX(${58 * currentTab}px)`;
+                    _.target.parentElement.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
