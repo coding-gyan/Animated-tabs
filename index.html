@@ -16,48 +16,39 @@
     <div class="container">
         <div class="tabs__container">
             <div class="tabs">
-                <div class="tab active" data-tab="0">
-                    <p>T1</p>
+                <div class="tab">
+                    <i class="fa-solid fa-folder active" data-tab="0"></i>
                 </div>
-                <div class="tab" data-tab="1">
-                    <p>T2</p>
+                <div class="tab">
+                    <i class="fa-solid fa-code" data-tab="1"></i>
                 </div>
-                <div class="tab" data-tab="2">
-                    <p>T3</p>
+                <div class="tab">
+                    <i class="fa-solid fa-inbox" data-tab="2"></i>
                 </div>
             </div>
             <div class="pointer"></div>
             <div class="content__container">
-                <div class="content" data-content="0">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus iure beatae iusto rem facilis illo sit harum laboriosam quas veniam.</p>
+                <div class="content active" data-content="0">
+                    <h3>Tab 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus iure beatae iusto rem facilis
+                        illo sit harum laboriosam quas veniam.</p>
+                </div>
+                <div class="content" data-content="1">
+                    <h3>Tab 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus iure beatae iusto rem facilis
+                        illo.</p>
+                </div>
+                <div class="content" data-content="2">
+                    <h3>Tab 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Natus iure beatae iusto rem facilis
+                        illo.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        const tabs = document.querySelector(".tabs");
-        const pointer = document.querySelector(".pointer");
-        const tab = document.querySelectorAll(".tab");
-
-        tab.forEach(e => {
-            e.addEventListener("click", (_) => {
-                tab.forEach(e => {
-                    e.classList.remove("active");
-                });
-
-                if(_.target.classList.contains("tab")) {
-                    let currentTab = _.target.getAttribute("data-tab");
-                    pointer.style.transform = `translateX(${58 * currentTab}px)`;
-                    _.target.classList.add("active");
-                } else {
-                    let currentTab = _.target.parentElement.getAttribute("data-tab");
-                    pointer.style.transform = `translateX(${58 * currentTab}px)`;
-                    _.target.parentElement.classList.add("active");
-                }
-            });
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

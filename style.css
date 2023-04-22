@@ -1,86 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: #2A2F4F;
+  background: #2a2f4f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  height: 400px;
+  display: flex;
+  justify-content: center;
 }
 
 .tabs__container {
-    display: flex;
-    flex-direction: column;
-    width: 169.74px;
+  display: flex;
+  flex-direction: column;
+  width: 169.74px;
 }
 
 .tabs {
-    display: flex;
-    padding: 10px 0;
-    background: white;
-    border-radius: 5px;
+  display: flex;
+  padding: 10px 0;
+  background: white;
+  border-radius: 5px;
 }
 
 .tab {
-    padding: 0 10px;
-    margin: 10px;
-    transition: all .4s;
+  padding: 0 10px;
+  margin: 10px;
+  color: #bcbcbc;
+  transition: all 0.4s;
 }
 
-.tab.active p {
-    color: #2A2F4F;
-    font-weight: 700;
-    text-shadow: 0 0 10px #2A2F4F, 0 0 20px #2A2F4F, 0 0 30px #222222;
+.tab i.active {
+  color: #2a2f4f;
+  font-weight: 700;
 }
 
-.tab p {
-    cursor: pointer;
+.tab i {
+  cursor: pointer;
 }
 
 .pointer {
-    width: 53.79px;
-    height: 15px;
-    background: white;
-    position: relative;
-    transition: all .4s;
+  width: 53.79px;
+  height: 15px;
+  background: white;
+  position: relative;
+  transition: all 0.4s;
 }
 
-.pointer::before, .pointer::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    display: inline-block;
-    width: 25px;
-    height: 15px;
-    background: #2A2F4F;
-    border-radius: 50px;
+.pointer::before,
+.pointer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 25px;
+  height: 15px;
+  background: #2a2f4f;
+  border-radius: 50px;
 }
 
 .pointer::before {
-    left: -7.5px;
+  left: -7.5px;
 }
 
 .pointer::after {
-    right: -7.5px;
+  right: -7.5px;
 }
 
 .content__container {
-    width: 100%;
-    /* height: 250px; */
-    background: white;
-    border-radius: 5px;
+  width: 100%;
+  /* height: 250px; */
+  background: white;
+  transform: translateY(-1px);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.content {
+  padding: 10px;
+  display: none;
+  transition: all 0.4s;
+}
+
+.content.active {
+  display: block;
 }
 
 .content p {
-    padding: 10px;
-    font-size: 14px;
+  font-size: 14px;
+  margin-top: 10px;
 }
